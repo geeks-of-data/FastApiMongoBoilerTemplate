@@ -1,6 +1,12 @@
 # FastApiMongoBoilerTemplate
+
 ![fast-api](static/fast.png)
 ![mongo](static/mongo.png)
+
+## Run Project
+
+- docker-compose build
+- docker-compose up -d
 
 ## Fast api documentation
 
@@ -13,6 +19,6 @@
 - sh docker_mongo_local_run.sh
 - docker ps
 
-# Schema
+## Schema
 
 ![user](static/user.png)

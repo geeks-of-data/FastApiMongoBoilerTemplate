@@ -12,7 +12,7 @@ def get_user_collection():
         mongodb_auth_source=MONGO_AUTH_SOURCE,
         password=MONGODB_PW,
         replica_set=MONGO_REPLICA_SET,
-        db_name=MONGODB_NAME,
+        db_name=MONGODB_DBNAME,
         collection_name=MONGODB_USER_COLLECTION_NAME
     )
 

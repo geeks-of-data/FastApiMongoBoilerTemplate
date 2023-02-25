@@ -1,0 +1,38 @@
+# docker-compose.yml
+
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    command: uvicorn worker.main:app --host 0.0.0.0 --port 8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      MONGODB_HOSTNAME: mongodb
+      MONGODB_DATABASE: helloworld
+      MONGODB_USERNAME: user
+      MONGODB_PASSWORD: secret_password
+      MONGODB_COLLECTION: users
+    depends_on:
+      - db
+  db:
+    image: mongo:latest
+    container_name: mongodb
+    restart: unless-stopped
+    command: mongod --auth
+    volumes:
+      - mongodbdata:/data/db
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_DATABASE: helloworld
+      MONGO_INITDB_COLLECTION: users
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: secret_password
+
+volumes:
+  mongodbdata:
+    driver: local
