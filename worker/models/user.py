@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 from typing import Union
 
 
@@ -7,4 +7,4 @@ class User(BaseModel):
     name: str
     surname: Union[str, None] = None
     age: int
-    email: str
+    email: EmailStr

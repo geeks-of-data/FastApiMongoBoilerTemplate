@@ -28,7 +28,7 @@ async def create_user(user: User):
 
 @app.put("/user/{username}", status_code=204)
 async def update_user(username: str, user: User):
-    _update_user(user.dict())
+    _update_user(user.dict(), username)
     return {"username": username}
 
 

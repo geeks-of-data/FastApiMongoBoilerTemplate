@@ -49,3 +49,15 @@ def get_mongo_collection(mongodb_hosts, read_preference, replica_set, password, 
         return client.get_database(db_name).get_collection(collection_name)
     except Exception as ex:
         raise Exception(ex)
+
+
+def get_data(col, data_filter, skip=0, limit=10):
+    return list(col.find(data_filter, {"_id": 0}).skip(skip).limit(limit))
+
+
+def insert_data(col, data):
+    return col.insert_one(data)
+
+
+def update_data(col, query, new_values):
+    return col.update_one(query, new_values)
