@@ -20,7 +20,7 @@ async def get_user(username: str):
     return {"users": _get_user(username)}
 
 
-@app.post("/user/}", status_code=status.HTTP_201_CREATED)
+@app.post("/user/{username}", status_code=status.HTTP_201_CREATED)
 async def create_user(user: User):
     result = _create_user(user.dict())
     if result:
