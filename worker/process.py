@@ -37,7 +37,11 @@ def _get_user(username):
 
 def _create_user(data):
     col = get_user_collection()
-    return insert_data(col, data)
+    user = _get_user(username=data['username'])
+    if len(user) == 0:
+        return insert_data(col, data)
+    else:
+        return False
 
 
 def _update_user(data, username):
