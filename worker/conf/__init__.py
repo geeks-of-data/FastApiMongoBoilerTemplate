@@ -1,0 +1,9 @@
+MONGODB_HOST = "0.0.0.0"
+MONGODB_NAME = "helloworld"
+MONGODB_PORT = 27017
+MONGODB_USER_COLLECTION_NAME = "users"
+MONGODB_USER = "user"
+MONGODB_PW = "secret_password"
+MONGO_AUTH_SOURCE = "admin"
+MONGO_READ_PREFERENCE = "secondaryPreferred"
+MONGO_REPLICA_SET = ""  # depends on mongo is cluster
