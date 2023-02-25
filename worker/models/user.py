@@ -3,8 +3,8 @@ from typing import Union
 
 
 class User(BaseModel):
-    username: str
-    name: str
+    username: str = "kaanozbudak"
+    name: str = "kaan"
     surname: Union[str, None] = None
-    age: int
-    email: EmailStr
+    age: int = 25
+    email: EmailStr = "kaanozbudak@hotmail.com"

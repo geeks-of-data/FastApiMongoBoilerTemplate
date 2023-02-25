@@ -1,6 +1,6 @@
 import logging
 
-from worker.helpers.mongo import get_mongo_collection, get_data, insert_data, update_data
+from worker.helpers.mongo import get_mongo_collection, get_data, insert_data, update_data, delete_data
 from worker.conf import *
 
 
@@ -47,5 +47,7 @@ def _update_user(data, username):
     return update_data(col, query, new_values)
 
 
-def _delete_user(data):
-    pass
+def _delete_user(username):
+    col = get_user_collection()
+    query = {"username": username}
+    return delete_data(col, query)

@@ -33,6 +33,6 @@ async def update_user(username: str, user: User):
 
 
 @app.delete("/user/{username}", status_code=200)
-async def delete_user(username: str, user: User):
-    _delete_user(user.dict())
+async def delete_user(username: str):
+    _delete_user(username)
     return {"username": username}

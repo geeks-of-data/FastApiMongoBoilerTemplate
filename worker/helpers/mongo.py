@@ -61,3 +61,7 @@ def insert_data(col, data):
 
 def update_data(col, query, new_values):
     return col.update_one(query, new_values)
+
+
+def delete_data(col, query):
+    return col.delete_one(query)
