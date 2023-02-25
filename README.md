@@ -7,6 +7,11 @@
 
 - docker-compose build
 - docker-compose up -d
+- docker ps
+
+## Stop Project
+- docker-compose down
+- docker ps
 
 ## Fast api documentation
 
