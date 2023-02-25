@@ -24,6 +24,6 @@
 - sh docker_mongo_local_run.sh
 - docker ps
 
-## Schema
+## Mongo Collection Schema
 
 ![user](static/user.png)
