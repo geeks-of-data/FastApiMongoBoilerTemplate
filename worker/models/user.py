@@ -3,7 +3,7 @@ from typing import Union
 
 
 class User(BaseModel):
-    username: str = "kaanozbudak"
+    username: str
     name: str = "kaan"
     surname: Union[str, None] = "surname"
     age: int = 25
