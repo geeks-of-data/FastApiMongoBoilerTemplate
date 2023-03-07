@@ -1,8 +1,19 @@
 from fastapi import FastAPI, status, HTTPException
 from worker.process import _get_users, _get_user, _create_user, _update_user, _delete_user
 from worker.models.user import User
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/", status_code=status.HTTP_200_OK)
