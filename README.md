@@ -27,3 +27,4 @@
 ## Mongo Collection Schema
 
 ![user](static/user.png)
+
